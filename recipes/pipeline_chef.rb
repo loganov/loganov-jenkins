@@ -10,6 +10,7 @@
 #rvm jenkins plugin
 #rvm + ruby 
 
+include_recipe 'loganov-jenkins::default'
 include_recipe 'loganov-vagrant'
 
 gem_package 'berkshelf' do
@@ -24,8 +25,8 @@ packagecloud_repo "chef/stable" do
   type "rpm"
 end
 
-if ::File.exists?(new_resource.config)
+#if ::File.exists?(new_resource.config)
   package 'chefdk'
-else
-	raise Chef::Exceptions::FileNotFound, "Packagecloud Chef repo is not present."
-end
+#else
+#	raise Chef::Exceptions::FileNotFound, "Packagecloud Chef repo is not present."
+#end

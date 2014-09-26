@@ -7,6 +7,7 @@
 # All rights reserved - Do Not Redistribute
 #
 
+include_recipe 'loganov-java'
 include_recipe 'jenkins::master'
 
 template "#{node['jenkins']['home']}/hudson.model.UpdateCenter.xml" do
