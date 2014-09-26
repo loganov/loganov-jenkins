@@ -14,8 +14,8 @@ include_recipe 'loganov-jenkins::default'
 include_recipe 'loganov-vagrant'
 
 
-case node['platform_family']
-when 'centos', 'rhel'
+case node[:platform]
+when 'centos', 'redhat', 'amazon', 'scientific'
   yumgroup "Development Tools" do
       action :install 
   end
