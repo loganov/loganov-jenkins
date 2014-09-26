@@ -39,3 +39,11 @@ end
 #  email        'gw@loganov.com'
 #  public_keys  ['tbd']
 #end
+
+execute "firewall-cmd --zone=public --add-port 8080/tcp" do
+    only_if "firewall-cmd --zone=public --query-port 8080/tcp | grep no"
+end
+
+execute "firewall-cmd --permanent --zone=public --add-port 8080/tcp" do
+    only_if "firewall-cmd --zone=public --query-port 8080/tcp | grep no"
+end
