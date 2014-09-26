@@ -40,8 +40,8 @@ yum_repository 'packagecloud' do
     action :create
 end
 
-if ::File.exists?('/etc/yum.repos.d/packagecloud.repo')
+#if ::File.exists?('/etc/yum.repos.d/packagecloud.repo')
   package 'chefdk'
-else
-	raise Chef::Exceptions::FileNotFound, "Packagecloud Chef repo is not present."
-end
+#else
+#	raise Chef::Exceptions::FileNotFound, "Packagecloud Chef repo is not present."
+#end
