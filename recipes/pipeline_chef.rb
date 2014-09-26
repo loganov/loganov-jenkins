@@ -27,7 +27,7 @@ end
 
 cookbook_file 'RPM-GPG-KEY-packagecloud' do
     path '/etc/pki/rpm-gpg/RPM-GPG-KEY-packagecloud'
-    mode 0644
+    mode '0644'
 end
 
 yum_repository 'packagecloud' do
@@ -40,7 +40,7 @@ yum_repository 'packagecloud' do
     action :create
 end
 
-if ::File.exists?('/etc/yum.repos.d/packagecloud.repo'))
+if ::File.exists?('/etc/yum.repos.d/packagecloud.repo')
   package 'chefdk'
 else
 	raise Chef::Exceptions::FileNotFound, "Packagecloud Chef repo is not present."
