@@ -11,7 +11,7 @@ include_recipe 'loganov-java'
 include_recipe 'jenkins::master'
 
 template "#{node['jenkins']['home']}/hudson.model.UpdateCenter.xml" do
-    source 'hudson.model.updateCenter.xml.erb'
+    source 'hudson.model.UpdateCenter.xml.erb'
 end
 
 template "#{node['jenkins']['home']}/hudson.plugins.git.GitSCM.xml" do
