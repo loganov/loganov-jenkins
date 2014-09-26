@@ -21,20 +21,20 @@ when 'centos', 'rhel'
   end
 end
 
-gem_package 'berkshelf' do
-	action :install
-end
+#gem_package 'berkshelf' do
+#	action :install
+#end
 
-gem_package 'test-kitchen' do
-	action :install
-end
+#gem_package 'test-kitchen' do
+#	action :install
+#end
 
 packagecloud_repo "chef/stable" do
   type "rpm"
 end
 
-if ::File.exists?(new_resource.config)
+#if ::File.exists?(''))
   package 'chefdk'
-else
-	raise Chef::Exceptions::FileNotFound, "Packagecloud Chef repo is not present."
-end
+#else
+#	raise Chef::Exceptions::FileNotFound, "Packagecloud Chef repo is not present."
+#end
