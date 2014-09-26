@@ -14,3 +14,7 @@ suites:
     run_list:
       - recipe[loganov-jenkins::default]
     attributes:
+  - name: pipeline-chef
+    run_list:
+      - recipe[loganov-jenkins::pipeline_chef]
+    attributes:

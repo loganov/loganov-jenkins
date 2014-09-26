@@ -4,8 +4,9 @@ maintainer_email 'devops@loganov.com'
 license          'All rights reserved'
 description      'Installs/Configures loganov-jenkins'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version          '0.1.2'
+version          '0.1.3'
 
 depends          'loganov-java'
 depends          'jenkins'
-depends          'vagrant'
+depends          'loganov-vagrant'
+depends          'packagecloud'

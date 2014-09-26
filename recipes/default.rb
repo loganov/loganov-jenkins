@@ -10,25 +10,20 @@
 include_recipe 'jenkins::master'
 
 template "#{node['jenkins']['home']}/hudson.model.UpdateCenter.xml" do
-    source 'hudson.model.updateCeneter.xml.erb'
+    source 'hudson.model.updateCenter.xml.erb'
 end
 
-#git config --global user.email "you@example.com"
-#git config --global user.name "Your Name"
+template "#{node['jenkins']['home']}/hudson.plugins.git.GitSCM.xml" do
+    source 'hudson.plugins.git.GitSCM.xml.erb'
+end
 
 jenkins_plugin 'greenballs' do
     action :install
 end
 
-jenkins_plugin 'ant' do
-    action :uninstall
-end
-
 jenkins_plugin 'scm-sync-configuration' do
     action :install
 end
-
-#http://updates.jenkins-ci.org/update-center.json
 
 jenkins_plugin 'git' do
     action :install
