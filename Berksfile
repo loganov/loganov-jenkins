@@ -4,3 +4,4 @@ metadata
 
 cookbook "jenkins"
 cookbook "loganov-java", path: "~/Workspace/loganov/loganov-java"
+cookbook "vagrant"
